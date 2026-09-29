@@ -150,6 +150,13 @@ if [[ $DRY_RUN -eq 0 ]]; then
   git remote add upstream "https://github.com/$UPSTREAM_REPO.git"
   git fetch --quiet upstream "$BASE_BRANCH"
 
+  # git am needs a committer identity and a fresh clone may not have one —
+  # it fails with "Committer identity unknown". Prefer your existing config,
+  # otherwise derive it from your GitHub login.
+  git config user.name  "$(git config user.name  || echo "$GH_USER")"
+  git config user.email "$(git config user.email || echo "${GH_USER}@users.noreply.github.com")"
+  echo "  committing as: $(git config user.name) <$(git config user.email)>"
+
   # Patches were generated against upstream master @ e1b0d005. Rebase onto
   # whatever master is now; git am -3 falls back to a 3-way merge if it moved.
   for pair in "$B1_BRANCH:$B1_PATCH" "$B2_BRANCH:$B2_PATCH"; do
@@ -162,6 +169,17 @@ if [[ $DRY_RUN -eq 0 ]]; then
   conflicted with the patch. Resolve manually:
     git checkout -b $branch upstream/$BASE_BRANCH && git am -3 $patch"
     fi
+
+    # The patches carry a placeholder author. Make the commit yours, so the PR
+    # and the all-contributors credit resolve to your account.
+    n_commits="$(git rev-list --count "upstream/$BASE_BRANCH..HEAD")"
+    if [[ "$n_commits" -eq 1 ]]; then
+      git commit --amend --no-edit --reset-author --quiet
+    else
+      git rebase --quiet --exec 'git commit --amend --no-edit --reset-author --quiet' \
+        "upstream/$BASE_BRANCH"
+    fi
+    echo "    $(git log --format='%h %an <%ae> %s' -1)"
   done
 else
   printf '  DRY  git checkout -B %s upstream/%s && git am -3 %s\n' "$B1_BRANCH" "$BASE_BRANCH" "$(basename "$B1_PATCH")"
