@@ -1,0 +1,167 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fim-one"
+version = "0.8.12"
+description = "LLM-powered Agent Runtime with dynamic DAG planning and concurrent execution"
+readme = "README.md"
+license = "LicenseRef-FIM-One"
+requires-python = ">=3.11"
+authors = [
+    { name = "fim-ai", email = "dev@fim.ai" },
+]
+keywords = ["agent", "llm", "dag", "rag", "ai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "litellm>=1.80",
+    "openai>=1.0",
+    "httpx>=0.27",
+    "pydantic>=2.0",
+    "python-multipart>=0.0.22",
+    "pyyaml>=6.0",
+    "jinja2>=3.0",
+    "simpleeval>=0.9",
+    "croniter>=6.0.0",
+    "pyotp>=2.9.0",
+    "stripe>=11.0,<13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=6.0",
+    # Upper-bounded on purpose: `ruff check src/ tests/` is gated against a
+    # committed baseline (scripts/ruff_gate.py), and a floating `ruff>=0.8`
+    # lets every `uv lock` silently move that number — 0.8.0 reports 2095
+    # violations on this tree, 0.15.2 reports 2106. Bump the bound in the
+    # same commit that re-records the baseline.
+    "ruff>=0.15,<0.16",
+    "mypy>=1.13",
+]
+web = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "python-dotenv>=1.0",
+    "sqlalchemy[asyncio]>=2.0",
+    "aiosqlite>=0.20",
+    "alembic>=1.14",
+    "bcrypt>=4.0",
+    "pyjwt>=2.0",
+]
+mcp = [
+    "mcp>=1.0",
+]
+files = [
+    "pdfplumber>=0.10",
+    "python-docx>=1.0",
+    # MarkItDown extras: docx/xlsx/pptx are the baseline Office formats;
+    # pdf/xls/outlook/audio-transcription/youtube-transcription add mp3/wav,
+    # legacy .xls, .msg emails, and YouTube URL → transcript. See
+    # `docs/configuration/environment-variables.mdx` for runtime knobs.
+    "markitdown[docx,xlsx,pptx,pdf,xls,outlook,audio-transcription,youtube-transcription]>=0.1.5",
+    # Official OCR plugin — auto-discovered by MarkItDown when
+    # `enable_plugins=True` is passed. Uses the same llm_client/llm_model
+    # pattern MarkItDown already uses for image descriptions, so it adds
+    # OCR to embedded images inside DOCX/PPTX/XLSX and full-page OCR for
+    # scanned PDFs without pulling in Tesseract or any ML binary.
+    "markitdown-ocr>=0.0.1",
+    "Markdown>=3.4",
+    "reportlab>=4.0",
+    "PyMuPDF>=1.25",
+]
+rag = [
+    "lancedb>=0.6",
+    "pyarrow>=14.0",
+]
+redis = [
+    "redis>=5.0",
+]
+postgres = [
+    "asyncpg>=0.30",
+    "psycopg2-binary>=2.9",
+]
+database = [
+    "sqlparse>=0.5",
+    "cryptography>=44.0",
+    "aiomysql>=0.2",
+]
+# KingbaseES (人大金仓) is PG protocol compatible; reuses asyncpg from [postgres].
+# Kept as an alias extra so operators can opt in explicitly from deploy manifests.
+kingbase = [
+    "asyncpg>=0.30",
+]
+# DM8 (达梦) driver. ``dmPython`` is not on PyPI — operators must download
+# the wheel from https://eco.dameng.com/ and install it manually, e.g.
+# ``uv pip install path/to/dmPython-<ver>-cp<py>-*.whl``. Leaving this
+# extra empty ensures ``uv sync --extra dm8`` succeeds so we can wire
+# CI/docs around the name without forcing a broken install.
+dm8 = []
+
+[project.urls]
+Homepage = "https://github.com/fim-ai/fim-one"
+Repository = "https://github.com/fim-ai/fim-one"
+Issues = "https://github.com/fim-ai/fim-one/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fim_one"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+# Alembic autogenerate output. The template emits `from typing import
+# Sequence, Union` and long `Revises:` docstring lines, and a migration is a
+# historical record — rewriting one that already ran against a production
+# database to satisfy pyupgrade is worse than leaving it unlinted. This one
+# exemption removes 382 violations (mostly UP007/UP035) from the baseline.
+"src/fim_one/migrations/versions/*" = ["E501", "F401", "I001", "UP007", "UP017", "UP035"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+# fim_one resolves as an untyped installed package when mypy is invoked on
+# evals/ alone (src layout without py.typed), so evals imports carry
+# ignore[import-untyped] and the harness subclasses an Any-typed tool.  When
+# a src/ file shares the mypy command line, fim_one DOES resolve and those
+# ignores become unused — warn_unused_ignores stays off so the evals files
+# type-check cleanly in both regimes (the pre-commit hook checks whatever
+# happens to be staged together).
+module = "evals.*"
+warn_unused_ignores = false
+disallow_subclassing_any = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+timeout = 30
+markers = [
+    "docker: mark test as requiring a running Docker daemon",
+    "regression: eval tier — a production bug frozen after its fix (pass@k)",
+    "challenge: eval tier — a policy probe the agent must never fail (pass^k)",
+]
+
+[dependency-groups]
+dev = [
+    "pytest-timeout>=2.4.0",
+]

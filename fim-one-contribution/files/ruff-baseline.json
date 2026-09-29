@@ -1,0 +1,1444 @@
+{
+  "_comment": "Committed ruff baseline for `scripts/ruff_gate.py`. Regenerate with `python3 scripts/ruff_gate.py --update` after a cleanup. Counts may only go down.",
+  "targets": [
+    "src",
+    "tests"
+  ],
+  "total": 1724,
+  "files": {
+    "src/fim_one/core/agent/guardrail.py": {
+      "N818": 2,
+      "UP037": 2
+    },
+    "src/fim_one/core/agent/hooks.py": {
+      "UP035": 1
+    },
+    "src/fim_one/core/agent/plan_tool.py": {
+      "UP035": 1
+    },
+    "src/fim_one/core/agent/react.py": {
+      "RUF003": 1,
+      "RUF100": 1,
+      "SIM108": 2
+    },
+    "src/fim_one/core/agent/template_seeds.py": {
+      "E501": 5,
+      "I001": 1
+    },
+    "src/fim_one/core/agent/workspace.py": {
+      "SIM108": 1,
+      "UP017": 3
+    },
+    "src/fim_one/core/channels/__init__.py": {
+      "I001": 1,
+      "RUF022": 1
+    },
+    "src/fim_one/core/channels/feishu.py": {
+      "B905": 2,
+      "RUF002": 2,
+      "RUF022": 1
+    },
+    "src/fim_one/core/document/markitdown_core.py": {
+      "F401": 1,
+      "UP037": 2
+    },
+    "src/fim_one/core/embedding/openai_compatible.py": {
+      "B008": 1
+    },
+    "src/fim_one/core/hooks/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/hooks/base.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/hooks/feishu_gate_hook.py": {
+      "RUF012": 1,
+      "RUF022": 1,
+      "UP035": 1
+    },
+    "src/fim_one/core/hooks/inline_confirmation.py": {
+      "RUF022": 1,
+      "UP037": 1,
+      "UP045": 1
+    },
+    "src/fim_one/core/mcp/meta_tool.py": {
+      "SIM118": 1
+    },
+    "src/fim_one/core/memory/context_guard.py": {
+      "E501": 1
+    },
+    "src/fim_one/core/memory/db.py": {
+      "I001": 2
+    },
+    "src/fim_one/core/memory/microcompact.py": {
+      "F401": 1
+    },
+    "src/fim_one/core/memory/summary.py": {
+      "RUF005": 1
+    },
+    "src/fim_one/core/model/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/model/error_classify.py": {
+      "SIM102": 2
+    },
+    "src/fim_one/core/model/fallback.py": {
+      "SIM103": 1
+    },
+    "src/fim_one/core/model/litellm_openai_shim.py": {
+      "UP037": 3
+    },
+    "src/fim_one/core/model/normalize.py": {
+      "SIM103": 1
+    },
+    "src/fim_one/core/model/openai_compatible.py": {
+      "B008": 2,
+      "E402": 5
+    },
+    "src/fim_one/core/model/retry.py": {
+      "RUF100": 3,
+      "SIM103": 3
+    },
+    "src/fim_one/core/model/structured.py": {
+      "RUF005": 1
+    },
+    "src/fim_one/core/notification/email_provider.py": {
+      "I001": 1
+    },
+    "src/fim_one/core/notification/lark_provider.py": {
+      "I001": 1
+    },
+    "src/fim_one/core/notification/slack_provider.py": {
+      "I001": 1
+    },
+    "src/fim_one/core/notification/wecom_provider.py": {
+      "I001": 1
+    },
+    "src/fim_one/core/planner/analyzer.py": {
+      "SIM105": 1
+    },
+    "src/fim_one/core/planner/citation_verifier.py": {
+      "RUF001": 3,
+      "RUF003": 2
+    },
+    "src/fim_one/core/planner/executor.py": {
+      "E501": 2,
+      "RUF001": 4,
+      "RUF003": 2,
+      "SIM105": 1,
+      "UP041": 1
+    },
+    "src/fim_one/core/planner/planner.py": {
+      "E501": 5,
+      "N806": 1
+    },
+    "src/fim_one/core/planner/router.py": {
+      "RUF001": 1
+    },
+    "src/fim_one/core/planner/tool_cache.py": {
+      "E501": 1
+    },
+    "src/fim_one/core/reranker/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/reranker/cohere.py": {
+      "B008": 1
+    },
+    "src/fim_one/core/reranker/jina.py": {
+      "B008": 1
+    },
+    "src/fim_one/core/reranker/openai.py": {
+      "B905": 2
+    },
+    "src/fim_one/core/security/connector_credentials.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/security/encryption.py": {
+      "E501": 2,
+      "I001": 1
+    },
+    "src/fim_one/core/skills/template_seeds.py": {
+      "E501": 7
+    },
+    "src/fim_one/core/tool/builtin/__init__.py": {
+      "B007": 1,
+      "E402": 28,
+      "I001": 2,
+      "RUF022": 1
+    },
+    "src/fim_one/core/tool/builtin/agent_builder.py": {
+      "E501": 3,
+      "I001": 1,
+      "RUF001": 1
+    },
+    "src/fim_one/core/tool/builtin/ask_user_question.py": {
+      "RUF022": 1,
+      "UP035": 1
+    },
+    "src/fim_one/core/tool/builtin/calculator.py": {
+      "E501": 1,
+      "N815": 1
+    },
+    "src/fim_one/core/tool/builtin/connector_builder.py": {
+      "E501": 7,
+      "I001": 2,
+      "RUF100": 2
+    },
+    "src/fim_one/core/tool/builtin/datetime_tool.py": {
+      "E501": 1
+    },
+    "src/fim_one/core/tool/builtin/db_builder.py": {
+      "E501": 14,
+      "N806": 1
+    },
+    "src/fim_one/core/tool/builtin/file_ops.py": {
+      "E501": 1,
+      "I001": 1
+    },
+    "src/fim_one/core/tool/builtin/grounded_retrieve.py": {
+      "E501": 1,
+      "I001": 2
+    },
+    "src/fim_one/core/tool/builtin/http_request.py": {
+      "RUF100": 1,
+      "SIM102": 1
+    },
+    "src/fim_one/core/tool/builtin/json_transform.py": {
+      "E501": 2
+    },
+    "src/fim_one/core/tool/builtin/markitdown_tool.py": {
+      "UP037": 1
+    },
+    "src/fim_one/core/tool/builtin/read_skill.py": {
+      "I001": 1
+    },
+    "src/fim_one/core/tool/builtin/request_tools.py": {
+      "UP037": 1
+    },
+    "src/fim_one/core/tool/builtin/shell_exec.py": {
+      "E501": 2
+    },
+    "src/fim_one/core/tool/builtin/template_render.py": {
+      "E501": 1,
+      "SIM103": 1
+    },
+    "src/fim_one/core/tool/connector/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/tool/connector/adapter.py": {
+      "F401": 1
+    },
+    "src/fim_one/core/tool/connector/circuit_breaker.py": {
+      "UP017": 3
+    },
+    "src/fim_one/core/tool/connector/config_loader.py": {
+      "E501": 2,
+      "I001": 1,
+      "SIM102": 1
+    },
+    "src/fim_one/core/tool/connector/database/drivers/mysql.py": {
+      "SIM117": 4,
+      "UP041": 1
+    },
+    "src/fim_one/core/tool/connector/database/drivers/postgresql.py": {
+      "SIM114": 1,
+      "UP041": 1
+    },
+    "src/fim_one/core/tool/connector/database/meta_tool.py": {
+      "SIM118": 1
+    },
+    "src/fim_one/core/tool/connector/database/safety.py": {
+      "E501": 1,
+      "F841": 1
+    },
+    "src/fim_one/core/tool/connector/meta_tool.py": {
+      "SIM118": 1
+    },
+    "src/fim_one/core/tool/connector/openapi_parser.py": {
+      "SIM102": 1
+    },
+    "src/fim_one/core/tool/connector/template_seeds.py": {
+      "E501": 16
+    },
+    "src/fim_one/core/tool/patch/v4a.py": {
+      "SIM103": 1
+    },
+    "src/fim_one/core/tool/sandbox/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/tool/sandbox/docker_backend.py": {
+      "E501": 4,
+      "SIM105": 1
+    },
+    "src/fim_one/core/tool/sandbox/local_backend.py": {
+      "E501": 3,
+      "I001": 1,
+      "SIM105": 4
+    },
+    "src/fim_one/core/tool/sandbox/protocol.py": {
+      "F401": 1
+    },
+    "src/fim_one/core/utils.py": {
+      "I001": 1,
+      "RUF001": 13,
+      "RUF003": 6
+    },
+    "src/fim_one/core/web/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/web/fetch/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/web/fetch/httpx_fetch.py": {
+      "F401": 1
+    },
+    "src/fim_one/core/web/search/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/web/search/jina.py": {
+      "E501": 1
+    },
+    "src/fim_one/core/workflow/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/core/workflow/engine.py": {
+      "E501": 1,
+      "F401": 3,
+      "SIM105": 1,
+      "UP041": 1
+    },
+    "src/fim_one/core/workflow/import_resolver.py": {
+      "I001": 1
+    },
+    "src/fim_one/core/workflow/nodes.py": {
+      "E501": 8,
+      "F401": 1,
+      "I001": 5,
+      "UP017": 1
+    },
+    "src/fim_one/core/workflow/parser.py": {
+      "B904": 1,
+      "F841": 1,
+      "SIM105": 1
+    },
+    "src/fim_one/core/workflow/scheduler.py": {
+      "I001": 2,
+      "RUF059": 1,
+      "UP041": 1
+    },
+    "src/fim_one/core/workflow/templates.py": {
+      "E501": 2
+    },
+    "src/fim_one/core/workflow/types.py": {
+      "UP035": 1,
+      "UP042": 3
+    },
+    "src/fim_one/core/workflow/variable_store.py": {
+      "B904": 1,
+      "I001": 1
+    },
+    "src/fim_one/db/engine.py": {
+      "F401": 1,
+      "I001": 1,
+      "RUF100": 1
+    },
+    "src/fim_one/db/models/__init__.py": {
+      "I001": 1,
+      "RUF022": 1
+    },
+    "src/fim_one/db/models/announcement.py": {
+      "E501": 2
+    },
+    "src/fim_one/db/models/audit_log.py": {
+      "F401": 1
+    },
+    "src/fim_one/db/models/channel.py": {
+      "I001": 1
+    },
+    "src/fim_one/db/models/connector_call_log.py": {
+      "F401": 1
+    },
+    "src/fim_one/db/models/connector_credential.py": {
+      "I001": 1
+    },
+    "src/fim_one/db/models/database_schema.py": {
+      "E501": 1
+    },
+    "src/fim_one/db/models/eval.py": {
+      "I001": 1,
+      "UP037": 2
+    },
+    "src/fim_one/db/models/invite_code.py": {
+      "E501": 1
+    },
+    "src/fim_one/db/models/knowledge_base.py": {
+      "F401": 3,
+      "I001": 1
+    },
+    "src/fim_one/db/models/model_config.py": {
+      "I001": 1
+    },
+    "src/fim_one/db/models/skill.py": {
+      "F401": 1
+    },
+    "src/fim_one/db/models/system_setting.py": {
+      "F401": 1
+    },
+    "src/fim_one/db/models/user.py": {
+      "E501": 6,
+      "I001": 1
+    },
+    "src/fim_one/migrations/env.py": {
+      "I001": 1
+    },
+    "src/fim_one/rag/chunking/__init__.py": {
+      "RUF022": 1
+    },
+    "src/fim_one/rag/chunking/markdown.py": {
+      "RUF012": 1,
+      "SIM108": 1
+    },
+    "src/fim_one/rag/chunking/recursive.py": {
+      "RUF012": 1,
+      "SIM108": 1
+    },
+    "src/fim_one/rag/chunking/semantic.py": {
+      "B905": 1
+    },
+    "src/fim_one/rag/grounding.py": {
+      "B905": 2,
+      "I001": 1
+    },
+    "src/fim_one/rag/loaders/__init__.py": {
+      "E501": 1,
+      "RUF022": 1,
+      "UP037": 1
+    },
+    "src/fim_one/rag/loaders/markitdown_loader.py": {
+      "UP037": 1
+    },
+    "src/fim_one/rag/manager.py": {
+      "UP037": 1
+    },
+    "src/fim_one/rag/store/lancedb.py": {
+      "B905": 1,
+      "E501": 2,
+      "SIM105": 1
+    },
+    "src/fim_one/rag/url_importer.py": {
+      "F401": 1
+    },
+    "src/fim_one/web/admin_notify.py": {
+      "E501": 6,
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin.py": {
+      "E402": 2,
+      "E501": 31,
+      "F401": 5,
+      "F841": 1,
+      "I001": 3,
+      "RUF100": 10,
+      "UP017": 10
+    },
+    "src/fim_one/web/api/admin_analytics.py": {
+      "F401": 3,
+      "I001": 1,
+      "UP017": 2
+    },
+    "src/fim_one/web/api/admin_api_keys.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin_batch.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin_credentials.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin_eval.py": {
+      "I001": 1,
+      "UP017": 1
+    },
+    "src/fim_one/web/api/admin_extra.py": {
+      "I001": 1,
+      "UP017": 4
+    },
+    "src/fim_one/web/api/admin_market.py": {
+      "B008": 8,
+      "B009": 1,
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin_notifications.py": {
+      "E501": 5,
+      "F401": 1,
+      "I001": 1,
+      "UP017": 3
+    },
+    "src/fim_one/web/api/admin_resources.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin_resources_overview.py": {
+      "I001": 1,
+      "UP017": 1
+    },
+    "src/fim_one/web/api/admin_reviews.py": {
+      "B007": 1,
+      "E501": 1,
+      "F401": 4,
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin_schedules.py": {
+      "I001": 1,
+      "UP017": 1
+    },
+    "src/fim_one/web/api/admin_security.py": {
+      "B008": 2,
+      "B904": 2,
+      "E501": 4,
+      "I001": 1,
+      "RUF100": 1,
+      "UP017": 3
+    },
+    "src/fim_one/web/api/admin_sensitive_words.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin_skills.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/admin_workflows.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/agent_ai.py": {
+      "E501": 5,
+      "I001": 1
+    },
+    "src/fim_one/web/api/agent_templates.py": {
+      "I001": 1,
+      "RUF100": 1
+    },
+    "src/fim_one/web/api/agents.py": {
+      "E501": 3,
+      "I001": 1
+    },
+    "src/fim_one/web/api/artifacts.py": {
+      "B008": 2,
+      "E501": 1,
+      "I001": 1,
+      "UP017": 1
+    },
+    "src/fim_one/web/api/auth.py": {
+      "E402": 5,
+      "E501": 20,
+      "F401": 2,
+      "I001": 1
+    },
+    "src/fim_one/web/api/billing.py": {
+      "B008": 8,
+      "F401": 1,
+      "I001": 1,
+      "RUF100": 1
+    },
+    "src/fim_one/web/api/builder.py": {
+      "B010": 1,
+      "E501": 22,
+      "I001": 1
+    },
+    "src/fim_one/web/api/channels.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/chat.py": {
+      "B023": 1,
+      "B904": 2,
+      "E402": 1,
+      "E501": 15,
+      "I001": 5,
+      "N806": 9,
+      "N814": 1,
+      "RUF001": 12,
+      "RUF002": 12,
+      "SIM105": 1,
+      "UP037": 1
+    },
+    "src/fim_one/web/api/confirmations.py": {
+      "I001": 1,
+      "RUF022": 1,
+      "UP017": 5
+    },
+    "src/fim_one/web/api/connector_ai.py": {
+      "E501": 7,
+      "F401": 1,
+      "I001": 1
+    },
+    "src/fim_one/web/api/connector_templates.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/connectors.py": {
+      "E501": 6,
+      "F401": 1,
+      "I001": 1,
+      "RUF019": 1
+    },
+    "src/fim_one/web/api/conversations.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/dashboard.py": {
+      "E501": 3,
+      "E712": 1,
+      "I001": 1,
+      "RUF003": 1,
+      "UP017": 3
+    },
+    "src/fim_one/web/api/db_connectors.py": {
+      "B008": 2,
+      "E501": 3,
+      "I001": 2,
+      "N806": 1,
+      "RUF001": 12,
+      "SIM117": 1
+    },
+    "src/fim_one/web/api/eval_datasets.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/eval_runs.py": {
+      "E501": 3,
+      "I001": 1
+    },
+    "src/fim_one/web/api/export.py": {
+      "B008": 2,
+      "B904": 2,
+      "E501": 22,
+      "F401": 3,
+      "F541": 1,
+      "I001": 4,
+      "N806": 2,
+      "RUF001": 4,
+      "RUF003": 2,
+      "SIM102": 1,
+      "SIM114": 1,
+      "UP017": 2,
+      "UP042": 2
+    },
+    "src/fim_one/web/api/files.py": {
+      "E501": 2,
+      "I001": 1,
+      "SIM115": 1
+    },
+    "src/fim_one/web/api/knowledge_bases.py": {
+      "E501": 3,
+      "F401": 1,
+      "I001": 2
+    },
+    "src/fim_one/web/api/market.py": {
+      "E501": 1,
+      "I001": 1,
+      "RUF100": 2
+    },
+    "src/fim_one/web/api/mcp_servers.py": {
+      "B010": 2,
+      "E501": 5,
+      "F401": 2,
+      "I001": 1
+    },
+    "src/fim_one/web/api/metrics.py": {
+      "F401": 1,
+      "I001": 1,
+      "RUF046": 1,
+      "UP017": 2
+    },
+    "src/fim_one/web/api/models.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/notifications.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/oauth.py": {
+      "F401": 1,
+      "I001": 1,
+      "SIM102": 1
+    },
+    "src/fim_one/web/api/organizations.py": {
+      "I001": 1,
+      "SIM102": 1
+    },
+    "src/fim_one/web/api/reviews.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/skill_templates.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/skills.py": {
+      "E501": 2,
+      "I001": 1
+    },
+    "src/fim_one/web/api/user_settings.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/api/version.py": {
+      "B008": 2,
+      "I001": 1,
+      "SIM103": 1
+    },
+    "src/fim_one/web/api/webhooks.py": {
+      "B008": 1,
+      "B009": 1,
+      "B904": 1,
+      "I001": 1
+    },
+    "src/fim_one/web/api/workflow_templates.py": {
+      "F401": 1,
+      "F841": 1,
+      "I001": 1
+    },
+    "src/fim_one/web/api/workflows.py": {
+      "B007": 1,
+      "B904": 8,
+      "E501": 5,
+      "I001": 4,
+      "N814": 1,
+      "SIM105": 1,
+      "UP041": 2
+    },
+    "src/fim_one/web/app.py": {
+      "E402": 64,
+      "E501": 3,
+      "F401": 1,
+      "I001": 2,
+      "N806": 3,
+      "RUF001": 1,
+      "RUF100": 4,
+      "SIM105": 4,
+      "UP041": 1
+    },
+    "src/fim_one/web/auth.py": {
+      "I001": 1,
+      "RUF003": 8,
+      "RUF100": 1,
+      "SIM108": 1,
+      "UP037": 3
+    },
+    "src/fim_one/web/confirmation_sse.py": {
+      "I001": 1,
+      "RUF022": 1,
+      "SIM105": 1,
+      "UP017": 4,
+      "UP037": 2
+    },
+    "src/fim_one/web/dependency_analyzer.py": {
+      "B007": 1
+    },
+    "src/fim_one/web/deps.py": {
+      "I001": 8,
+      "UP035": 1,
+      "UP037": 13
+    },
+    "src/fim_one/web/email.py": {
+      "E501": 11,
+      "I001": 1,
+      "RUF001": 1
+    },
+    "src/fim_one/web/export_fonts.py": {
+      "RUF100": 2
+    },
+    "src/fim_one/web/interrupt.py": {
+      "SIM105": 1,
+      "UP017": 1
+    },
+    "src/fim_one/web/models/__init__.py": {
+      "RUF100": 1
+    },
+    "src/fim_one/web/notifications.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/platform.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/schemas/auth.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/schemas/billing.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/schemas/channel.py": {
+      "I001": 1,
+      "RUF022": 1
+    },
+    "src/fim_one/web/schemas/connector.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/schemas/eval.py": {
+      "F401": 1
+    },
+    "src/fim_one/web/schemas/metrics.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/schemas/model_provider.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/schemas/user_settings.py": {
+      "I001": 1
+    },
+    "src/fim_one/web/schemas/workflow.py": {
+      "I001": 1,
+      "UP017": 1
+    },
+    "src/fim_one/web/services/billing_flag.py": {
+      "I001": 1,
+      "RUF022": 1,
+      "RUF100": 1
+    },
+    "src/fim_one/web/services/default_plan.py": {
+      "RUF100": 1
+    },
+    "src/fim_one/web/services/stripe_pricing.py": {
+      "RUF100": 1
+    },
+    "src/fim_one/web/solution_seeds.py": {
+      "E501": 131,
+      "UP017": 2
+    },
+    "tests/conftest.py": {
+      "I001": 1
+    },
+    "tests/fake_llm.py": {
+      "RUF022": 1
+    },
+    "tests/test_admin_billing.py": {
+      "I001": 1,
+      "RUF100": 11
+    },
+    "tests/test_admin_market.py": {
+      "I001": 1,
+      "SIM300": 1,
+      "UP017": 2
+    },
+    "tests/test_admin_model_provider_uniqueness.py": {
+      "I001": 1,
+      "RUF100": 1
+    },
+    "tests/test_admin_provider_model_batch_delete.py": {
+      "I001": 1,
+      "RUF100": 1
+    },
+    "tests/test_admin_workflow_batch.py": {
+      "F401": 1,
+      "I001": 1,
+      "UP017": 2
+    },
+    "tests/test_agent_binding_visibility.py": {
+      "UP035": 1
+    },
+    "tests/test_agent_fork.py": {
+      "I001": 1
+    },
+    "tests/test_agent_hooks.py": {
+      "I001": 1
+    },
+    "tests/test_agent_workspace.py": {
+      "I001": 1
+    },
+    "tests/test_allow_fallback_default.py": {
+      "UP035": 1
+    },
+    "tests/test_ask_user_question.py": {
+      "I001": 1,
+      "UP017": 3
+    },
+    "tests/test_auth_token_type.py": {
+      "I001": 1
+    },
+    "tests/test_auto_routing.py": {
+      "I001": 1
+    },
+    "tests/test_billing_api.py": {
+      "I001": 1,
+      "RUF100": 3
+    },
+    "tests/test_billing_enabled_flag.py": {
+      "F401": 1,
+      "I001": 1,
+      "RUF059": 1
+    },
+    "tests/test_billing_models.py": {
+      "B017": 4,
+      "I001": 1,
+      "UP017": 3
+    },
+    "tests/test_blueprint_diff.py": {
+      "E501": 2,
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_calculator.py": {
+      "I001": 1
+    },
+    "tests/test_call_agent.py": {
+      "F841": 1,
+      "I001": 1
+    },
+    "tests/test_channel_model.py": {
+      "UP035": 1
+    },
+    "tests/test_channels_api.py": {
+      "I001": 2,
+      "UP035": 1
+    },
+    "tests/test_chat_guardrail_sse.py": {
+      "F401": 1,
+      "I001": 1,
+      "SIM117": 1
+    },
+    "tests/test_chat_quota_streaming.py": {
+      "I001": 1,
+      "SIM117": 2,
+      "UP037": 1
+    },
+    "tests/test_chunking.py": {
+      "E501": 1,
+      "I001": 1
+    },
+    "tests/test_circuit_breaker.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_citation_verifier.py": {
+      "F401": 2,
+      "I001": 1,
+      "RUF001": 6
+    },
+    "tests/test_compact.py": {
+      "B905": 1,
+      "F401": 2
+    },
+    "tests/test_confirmation_expiry.py": {
+      "UP035": 1
+    },
+    "tests/test_confirmation_respond.py": {
+      "I001": 1,
+      "UP017": 2,
+      "UP035": 1
+    },
+    "tests/test_connector_config_loader.py": {
+      "E501": 1,
+      "F401": 1,
+      "I001": 1,
+      "RUF043": 6,
+      "RUF059": 21
+    },
+    "tests/test_connector_credential_resolution.py": {
+      "UP035": 1
+    },
+    "tests/test_connector_credentials.py": {
+      "E501": 1,
+      "I001": 1
+    },
+    "tests/test_connector_fork.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_connector_import_export.py": {
+      "B017": 2,
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_connector_meta_tool.py": {
+      "F401": 1,
+      "I001": 1,
+      "N806": 3
+    },
+    "tests/test_connector_template.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_context_guard.py": {
+      "F401": 2,
+      "I001": 1,
+      "RUF005": 1
+    },
+    "tests/test_conversation_recovery.py": {
+      "I001": 1,
+      "RUF100": 2,
+      "UP035": 1
+    },
+    "tests/test_dag_step_type.py": {
+      "I001": 1
+    },
+    "tests/test_database_connector/test_adapter.py": {
+      "F401": 3,
+      "RUF015": 8
+    },
+    "tests/test_database_connector/test_encryption.py": {
+      "F401": 1
+    },
+    "tests/test_database_meta_tool.py": {
+      "F821": 6,
+      "I001": 1,
+      "N806": 6
+    },
+    "tests/test_datetime_tool.py": {
+      "I001": 1
+    },
+    "tests/test_db_connector_not_shareable.py": {
+      "UP035": 1
+    },
+    "tests/test_db_memory.py": {
+      "F401": 1,
+      "F841": 1
+    },
+    "tests/test_db_memory_recovery.py": {
+      "B905": 1
+    },
+    "tests/test_dependency_analyzer.py": {
+      "E501": 1,
+      "I001": 1
+    },
+    "tests/test_document_processor.py": {
+      "B017": 2,
+      "E501": 1,
+      "F401": 2,
+      "I001": 1,
+      "N806": 3,
+      "RUF059": 2,
+      "SIM117": 2
+    },
+    "tests/test_email_smtp_ssl.py": {
+      "SIM117": 2
+    },
+    "tests/test_embedding.py": {
+      "F401": 1
+    },
+    "tests/test_error_classify.py": {
+      "B904": 2,
+      "I001": 1,
+      "N818": 1
+    },
+    "tests/test_eval_harness.py": {
+      "I001": 1,
+      "SIM117": 5
+    },
+    "tests/test_export.py": {
+      "E402": 1,
+      "F401": 5,
+      "I001": 2,
+      "RUF001": 2
+    },
+    "tests/test_fallback.py": {
+      "F401": 2,
+      "I001": 1
+    },
+    "tests/test_feature_flags.py": {
+      "F401": 1,
+      "UP035": 1
+    },
+    "tests/test_feishu_channel.py": {
+      "I001": 1
+    },
+    "tests/test_feishu_gate_hook.py": {
+      "F401": 1
+    },
+    "tests/test_gpt5_native_responses.py": {
+      "SIM117": 1,
+      "UP035": 1
+    },
+    "tests/test_grounded_retrieve.py": {
+      "I001": 1
+    },
+    "tests/test_grounding.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_guardrail.py": {
+      "I001": 1
+    },
+    "tests/test_hooks_bootstrap.py": {
+      "I001": 1
+    },
+    "tests/test_http_request.py": {
+      "F401": 1,
+      "F841": 2,
+      "I001": 1,
+      "SIM117": 20
+    },
+    "tests/test_import_resolver.py": {
+      "F401": 3,
+      "I001": 1
+    },
+    "tests/test_json_transform.py": {
+      "I001": 1
+    },
+    "tests/test_kb_binding_visibility.py": {
+      "UP035": 1
+    },
+    "tests/test_kb_not_shareable.py": {
+      "E501": 1,
+      "UP035": 1
+    },
+    "tests/test_kb_owner_delegation.py": {
+      "UP035": 1
+    },
+    "tests/test_loaders.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_markdown_chunker.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_market_connection_dep_subscribe.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_market_unsubscribe_cascade.py": {
+      "E501": 5,
+      "F401": 2,
+      "I001": 1
+    },
+    "tests/test_markitdown_core.py": {
+      "I001": 1,
+      "RUF012": 2
+    },
+    "tests/test_mcp.py": {
+      "I001": 1,
+      "N815": 1
+    },
+    "tests/test_mcp_meta_tool.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_mcp_security.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_mcp_server_fork.py": {
+      "I001": 1
+    },
+    "tests/test_memory.py": {
+      "F401": 2,
+      "F841": 1,
+      "I001": 1
+    },
+    "tests/test_metrics.py": {
+      "F401": 1,
+      "I001": 2,
+      "RUF100": 1
+    },
+    "tests/test_microcompact.py": {
+      "I001": 1
+    },
+    "tests/test_model.py": {
+      "F401": 2,
+      "I001": 5,
+      "UP035": 1
+    },
+    "tests/test_model_config_export_import.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_models_effective_vision.py": {
+      "I001": 1,
+      "RUF100": 1
+    },
+    "tests/test_multi_model.py": {
+      "F401": 2,
+      "I001": 1
+    },
+    "tests/test_native_function_calling.py": {
+      "F401": 2,
+      "I001": 1
+    },
+    "tests/test_notification.py": {
+      "E501": 10,
+      "F401": 1,
+      "I001": 1,
+      "SIM117": 5
+    },
+    "tests/test_notifications.py": {
+      "I001": 1,
+      "SIM117": 8,
+      "UP035": 1
+    },
+    "tests/test_oauth.py": {
+      "E501": 2,
+      "SIM117": 4
+    },
+    "tests/test_openapi_parser.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_pinned_messages.py": {
+      "E501": 1,
+      "I001": 1
+    },
+    "tests/test_planner.py": {
+      "E501": 5,
+      "I001": 1,
+      "RUF001": 1
+    },
+    "tests/test_quota_window.py": {
+      "I001": 1
+    },
+    "tests/test_rate_limit.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_rate_limit_per_user.py": {
+      "I001": 1
+    },
+    "tests/test_react.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_react_cycle_block.py": {
+      "F401": 2
+    },
+    "tests/test_react_finish_signal.py": {
+      "E501": 2,
+      "F401": 1
+    },
+    "tests/test_react_harness.py": {
+      "F401": 2,
+      "I001": 1,
+      "RUF001": 2
+    },
+    "tests/test_react_self_reflection.py": {
+      "F401": 3,
+      "I001": 1
+    },
+    "tests/test_react_tool_timeout.py": {
+      "E501": 1
+    },
+    "tests/test_request_tools.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_reranker.py": {
+      "F401": 1
+    },
+    "tests/test_resolve_vision.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_resolve_vision_llm.py": {
+      "I001": 1
+    },
+    "tests/test_responses_adapter.py": {
+      "UP035": 1
+    },
+    "tests/test_retriever.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_retry.py": {
+      "B017": 3,
+      "F401": 2,
+      "I001": 1
+    },
+    "tests/test_run_workflow_tool.py": {
+      "I001": 1
+    },
+    "tests/test_sandbox_backend.py": {
+      "F401": 3,
+      "I001": 1
+    },
+    "tests/test_sandbox_isolation.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_sandbox_security.py": {
+      "I001": 1
+    },
+    "tests/test_semantic_annotations.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_sharing_revocation.py": {
+      "F401": 1,
+      "UP035": 1
+    },
+    "tests/test_shell_security.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_skill_fork.py": {
+      "I001": 1
+    },
+    "tests/test_solution_seeds.py": {
+      "I001": 1
+    },
+    "tests/test_ssrf_transport.py": {
+      "I001": 1
+    },
+    "tests/test_step_verifier.py": {
+      "I001": 1
+    },
+    "tests/test_stream_tool_call_aggregation.py": {
+      "F401": 3,
+      "I001": 1
+    },
+    "tests/test_strip_tool_protocol.py": {
+      "F401": 1,
+      "RUF001": 24
+    },
+    "tests/test_stripe_client.py": {
+      "I001": 1
+    },
+    "tests/test_stripe_webhook.py": {
+      "E501": 3,
+      "F401": 3,
+      "I001": 1,
+      "RUF100": 1
+    },
+    "tests/test_structured_call.py": {
+      "E501": 1,
+      "F401": 1
+    },
+    "tests/test_subscriber_access_control.py": {
+      "I001": 8
+    },
+    "tests/test_suggest_followups.py": {
+      "I001": 1,
+      "RUF001": 1,
+      "RUF002": 1
+    },
+    "tests/test_template_render.py": {
+      "I001": 1
+    },
+    "tests/test_text_utils.py": {
+      "I001": 1
+    },
+    "tests/test_think_tag_parser.py": {
+      "F401": 2,
+      "I001": 1,
+      "RUF059": 1
+    },
+    "tests/test_thinking_persistence.py": {
+      "I001": 1,
+      "RUF015": 2,
+      "UP037": 1
+    },
+    "tests/test_tool.py": {
+      "F401": 2,
+      "I001": 1
+    },
+    "tests/test_tool_cache.py": {
+      "E501": 1,
+      "F401": 2,
+      "I001": 1
+    },
+    "tests/test_tool_selection.py": {
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_translate.py": {
+      "E501": 4,
+      "RUF001": 3,
+      "RUF012": 1
+    },
+    "tests/test_usage_endpoint.py": {
+      "I001": 1,
+      "RUF100": 1
+    },
+    "tests/test_usage_tracking.py": {
+      "E501": 1,
+      "F401": 1,
+      "I001": 1
+    },
+    "tests/test_user_deletion.py": {
+      "I001": 1
+    },
+    "tests/test_v4a_patch.py": {
+      "I001": 1
+    },
+    "tests/test_vector_store.py": {
+      "I001": 1
+    },
+    "tests/test_work_card.py": {
+      "I001": 1
+    },
+    "tests/test_workflow.py": {
+      "B007": 1,
+      "B011": 1,
+      "B905": 1,
+      "E501": 26,
+      "F401": 3,
+      "I001": 10,
+      "UP037": 1
+    },
+    "tests/test_workflow_analytics.py": {
+      "F401": 2,
+      "I001": 1
+    },
+    "tests/test_workflow_auto_subscribe.py": {
+      "F401": 4,
+      "I001": 1
+    },
+    "tests/test_workflow_batch_run.py": {
+      "I001": 1
+    },
+    "tests/test_workflow_connector_audit.py": {
+      "I001": 1
+    },
+    "tests/test_workflow_e2e_lifecycle.py": {
+      "F401": 8,
+      "F841": 1,
+      "I001": 1,
+      "RUF015": 1
+    },
+    "tests/test_workflow_engine_advanced.py": {
+      "F401": 3,
+      "I001": 1
+    },
+    "tests/test_workflow_engine_integration.py": {
+      "F401": 6,
+      "I001": 1
+    },
+    "tests/test_workflow_fork.py": {
+      "I001": 1
+    },
+    "tests/test_workflow_human_intervention.py": {
+      "F401": 4,
+      "I001": 1,
+      "SIM108": 1,
+      "UP017": 1
+    },
+    "tests/test_workflow_mcp_executor.py": {
+      "F401": 1,
+      "I001": 1,
+      "N815": 1
+    },
+    "tests/test_workflow_nodes_phase2.py": {
+      "E501": 1,
+      "I001": 1
+    },
+    "tests/test_workflow_rate_limiter.py": {
+      "F401": 1
+    },
+    "tests/test_workflow_run_cleanup.py": {
+      "I001": 1
+    },
+    "tests/test_workflow_schedule.py": {
+      "I001": 1
+    },
+    "tests/test_workflow_scheduler.py": {
+      "F841": 2,
+      "I001": 1,
+      "SIM105": 1
+    },
+    "tests/test_workflow_templates.py": {
+      "I001": 1,
+      "UP017": 3
+    },
+    "tests/test_workflow_test_node.py": {
+      "I001": 1
+    },
+    "tests/test_workflow_token_accounting.py": {
+      "UP035": 1
+    },
+    "tests/test_workflow_validation_warnings.py": {
+      "F401": 4,
+      "I001": 1,
+      "SIM110": 1
+    }
+  }
+}
